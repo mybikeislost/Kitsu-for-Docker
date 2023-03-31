@@ -39,7 +39,7 @@ main() {
     # Get latest version
     if [[ ${KITSU_VERSION,,} == "latest" ]]; then
         echo -e "${YELLOW}Checking what's the latest version of Kitsu is.${RST}"
-        export KITSU_VERSION=$(curl https://api.github.com/repos/cgwire/kitsu/commits | jq -r '.[].commit.message | select(. | test("[0-9]+(\\\\.[0-9]+)+"))?' | grep -m1 "")
+        export KITSU_VERSION=$(curl -s https://api.github.com/repos/EmberLightVFX/Kitsu-for-Docker/commits\?per_page\=1 | jq '.[0].sha')
         if [[ ${KITSU_VERSION} == "" ]]; then
             export KITSU_VERSION="null"
         fi
