@@ -76,7 +76,7 @@ main() {
         cd /opt/
         shopt -s dotglob
         rm -rf kitsu/*
-        git clone -b "$KITSU_VERSION-build" --single-branch --depth 1 https://github.com/cgwire/kitsu kitsu
+        git clone -b "$KITSU_VERSION" --single-branch --depth 1 https://github.com/cgwire/kitsu kitsu
         echo -e "${BIGreen}Kitsu installed.${RST}"
     fi
 }
